@@ -1,8 +1,68 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Naver from './Naver'
+import { useNavigate } from 'react-router-dom';
+
+
+
+
 
 function Home() {
+  const navigate = useNavigate();
+  const [mode,setMode] = useState(true);
+   const [data,setData] = useState([
+    {id:1,txt:'sdfsdfsdf',state:false},
+    {id:2,txt:'sdfsdfsdfsdfsdfsdfs',state:false},
+    {id:3,txt:'1212121', state:false},
+    {id:4,txt:'sdfsdfsdsdfsdf23232323232f', state:false}
+  ]);
+
+  let time=null;
+  function down(id){
+    let rollback = data.filter(obj=>obj.state == true);
+    if(!rollback.length) {
+      setMode(true);
+      console.log('모드해제')
+    }
+    
+    time = setTimeout(()=>{
+        setMode(false)
+    },1000)
+  }
+  
+  function up(){
+    console.log('up');
+    clearTimeout(time);    
+  }
+
+  function move(id){
+    if(mode){
+      navigate('/css')
+    }else{
+      setData(
+        data.map(obj=>{
+          if(obj.id == id) obj.state=!obj.state;
+          return obj;
+        })
+      )
+    }
+  }
+
+
   return (
     <>
+
+    <ul>
+      {
+        data.map(obj=>(
+          <li key={obj.id} onMouseDown={()=>{down(obj.id)}} onMouseUp={up} onClick={()=>{move(obj.id)}}  className={obj.state ? 'on':''}> {obj.txt} </li>
+        ))
+      }
+     
+    </ul>
+
+
+
+
         <h2>React 프로젝트 생성 및 실행</h2>
         1. 비주얼코드 (react폴더 열기) <br />
         2. 터미널(ctrl + j) <br />
