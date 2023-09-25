@@ -1,6 +1,6 @@
 const staticCacheName = "version-1"
 const urlsToCache = [
-    "/index.html",'/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg','/favicon.ico','/static/js/bundle.js','/fallback.html','/manifest.json','/logo192.png'
+    "/react-basic/index.html",'/react-basic/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg','/react-basic/static/js/bundle.js','/react-basic/manifest.json','/react-basic/icons/logo-192x192.png'
 ]
 
 const dynamicCache = "dynamicCache";
