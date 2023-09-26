@@ -1,6 +1,4 @@
 {
-  "short_name": "PWA-TEST",
-  "name": "Progressive Web App-Test",
   "icons": [
     {
       "src": "/react-basic/icons/windows11/SmallTile.scale-100.png",
@@ -493,9 +491,5 @@
       "sizes": "1024x1024",
       "type": "image/png"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
