@@ -5,7 +5,8 @@
     {
       "src": "/react-basic/icons/windows11/SmallTile.scale-100.png",
       "sizes": "71x71",
-      "type": "image/png" 
+      "type": "image/png",
+      "purpose": "any" 
     },
     {
       "src": "/react-basic/icons/windows11/SmallTile.scale-125.png",
